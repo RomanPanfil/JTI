@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>Icon kit preview | gulp-svg-sprites</title>
+    <link href="css/sprite.css" rel="stylesheet" type="text/css" media="all"/>
+    <style type="text/css">@CHARSET "UTF-8";
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        color: #666;
+        background: #fafafa;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 1.4
+    }
+
+    header {
+        display: block;
+        padding: 3em 3em 2em 3em;
+        background-color: #fff
+    }
+
+    header p {
+        margin: 0 0 0 0;
+    }
+
+    nav {
+        font-size: .7em;
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0
+    }
+
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 2em;
+        color: #0f7595;
+        white-space: nowrap
+    }
+
+    nav a:hover {
+        text-decoration: underline
+    }
+
+    nav a.current {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #666
+    }
+
+    section {
+        border-top: 1px solid #eee;
+        padding: 2em 3em 0 3em
+    }
+
+    ul {
+        margin: 0;
+        padding: 0
+    }
+
+    .icon-boxes li {
+        display: inline-block;
+        background-color: #fff;
+        position: relative;
+        margin: 0 2em 2em 0;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        padding: 1em 1em 1em 1em;
+        cursor: default
+    }
+
+    .icon-box {
+        margin: 0;
+        width: 144px;
+        height: 144px;
+        position: relative;
+        background: #ccc url(data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=) top left repeat;
+        border: 1px solid #ccc;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center
+    }
+    .icon-box.inverted {
+        background: black;
+    }
+
+    .icon {
+        display: inline;
+        display: inline-block
+    }
+
+    .snippet-popover {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 16px;
+        z-index: 1;
+        transition: all .3s;
+    }
+    .snippet-popover.active {
+        display: block;
+        opacity: 1;
+    }
+
+    pre {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 5px 0;
+        font-size: 1em;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    footer {
+        display: block;
+        margin: 0;
+        padding: 0 3em 3em 3em
+    }
+
+    footer p {
+        margin: 0;
+        font-size: .7em
+    }
+
+    footer a {
+        color: #0f7595;
+        margin-left: 0
+    }
+    </style>
+
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
+	
+		<symbol id="arrow-left" viewBox="0 0 32 32">
+			<path d="M27 16H5M10 11l-5 5 5 5"></path>
+		</symbol>
+	
+		<symbol id="arrow-right" viewBox="0 0 32 32">
+			<path d="M5 16h22M22 11l5 5-5 5"></path>
+		</symbol>
+	
+		<symbol id="arrow-right-green" viewBox="0 0 32 32">
+			<path d="M5 16h22M22 11l5 5-5 5" stroke="#00B185" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
+		<symbol id="arrow-right-white" viewBox="0 0 24 25">
+			<path d="M3.75 12.5h16.5M16.5 8.75l3.75 3.75-3.75 3.75" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
+		<symbol id="call" viewBox="0 0 24 24">
+			<path d="M21.97 18.33c0 .36-.08.73-.25 1.09-.17.36-.39.7-.68 1.02-.49.54-1.03.93-1.64 1.18-.6.25-1.25.38-1.95.38-1.02 0-2.11-.24-3.26-.73s-2.3-1.15-3.44-1.98a28.75 28.75 0 0 1-3.28-2.8 28.414 28.414 0 0 1-2.79-3.27c-.82-1.14-1.48-2.28-1.96-3.41C2.24 8.67 2 7.58 2 6.54c0-.68.12-1.33.36-1.93.24-.61.62-1.17 1.15-1.67C4.15 2.31 4.85 2 5.59 2c.28 0 .56.06.81.18.26.12.49.3.67.56l2.32 3.27c.18.25.31.48.4.7.09.21.14.42.14.61 0 .24-.07.48-.21.71-.13.23-.32.47-.56.71l-.76.79c-.11.11-.16.24-.16.4 0 .08.01.15.03.23.03.08.06.14.08.2.18.33.49.76.93 1.28.45.52.93 1.05 1.45 1.58.54.53 1.06 1.02 1.59 1.47.52.44.95.74 1.29.92.05.02.11.05.18.08.08.03.16.04.25.04.17 0 .3-.06.41-.17l.76-.75c.25-.25.49-.44.72-.56.23-.14.46-.21.71-.21.19 0 .39.04.61.13.22.09.45.22.7.39l3.31 2.35c.26.18.44.39.55.64.1.25.16.5.16.78z" stroke="#26A577" stroke-width="1.5" stroke-miterlimit="10"></path>
+		</symbol>
+	
+		<symbol id="caret-down" viewBox="0 0 22 23">
+			<path d="M17.875 8.75L11 15.625 4.125 8.75"></path>
+		</symbol>
+	
+		<symbol id="check" viewBox="0 0 20 14">
+			<path d="M1.5 7l5.66 5.66L18.5 1.34" stroke="#26A577" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
+		<symbol id="cross" viewBox="0 0 33 32">
+			<path d="M25.5 7l-18 18M25.5 25L7.5 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
+		<symbol id="info-circle" viewBox="0 0 24 24">
+			<g opacity=".6" stroke="#26A577" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM12 8v5" stroke-width="1.5"></path><path d="M11.995 16h.009" stroke-width="2"></path></g>
+		</symbol>
+	
+		<symbol id="mail" viewBox="0 0 24 24">
+			<path d="M2 8.5c0-3.5 2-5 5-5h10c3 0 5 1.5 5 5v7c0 3.5-2 5-5 5H7" stroke="#26A577" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 9l-3.13 2.5c-1.03.82-2.72.82-3.75 0L7 9M2 16.5h6M2 12.5h3" stroke="#26A577" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
+		<symbol id="paperclip" viewBox="0 0 32 32">
+			<path d="M12.973 21.78l9.9-9.9a2 2 0 1 0-2.83-2.828L7.317 21.78c-1.524 1.524-1.493 4.025.07 5.587 1.561 1.562 4.063 1.593 5.587.07l12.904-12.904a6 6 0 0 0-8.485-8.486l-9.9 9.9" stroke="#00B185" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
+		<symbol id="swipe-icon" viewBox="0 0 18 30">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M8.17 1.957L6.054 3.914l2.134 1.973 2.133 1.972V5.09l1.923-.017 1.922-.018.02-1.156.018-1.157-1.923-.017-1.924-.017-.036-1.354L10.286 0 8.17 1.957zM1.823 7.544c-.436.124-1.026.48-1.255.758-.616.748-.74 1.702-.327 2.514.112.221.729.838 2.26 2.262 1.159 1.077 2.107 1.975 2.107 1.996 0 .022-.19.055-.42.074-.805.068-1.636.569-1.97 1.189-.09.166-.269.674-.397 1.13-.129.455-.4 1.4-.601 2.099-.971 3.36-.996 3.46-.965 3.96.052.862.193 1.042 2.392 3.055 2.088 1.913 2.583 2.274 3.79 2.765A9.154 9.154 0 0 0 9.745 30c.691 0 1.995-.202 2.656-.412 2.367-.75 4.32-2.552 5.103-4.707.48-1.32.457-.955.487-7.565.015-3.3.008-6.127-.017-6.281a.959.959 0 0 0-.235-.478c-.364-.377-.935-.354-1.903.074-1.092.483-1.884 1.2-2.41 2.185-.378.707-.498 1.236-.516 2.286-.008.482-.03.876-.05.876-.02 0-1.956-1.776-4.303-3.947C6.21 9.859 4.13 7.984 3.938 7.864c-.658-.406-1.409-.52-2.115-.32z" fill="#989BA1"></path>
+		</symbol>
+	
+</svg>
+
+<header>
+    <h1 id="logo">Gulp SVG Sprites <small>(12 icons in &lt;symbol&gt; mode)</small></h1>
+    <h4>Files Generated:</h4>
+    <ol>
+        <li><a href="svg/symbols.svg">svg/symbols.svg</a></li>
+    </ol>
+    <h4>Usage:</h4>
+    <ol>
+        <li>
+            Include the <strong>contents</strong> of the <a href="svg/symbols.svg">SVG file</a> just after the opening <code>&lt;body&gt;</code> tag.
+        </li>
+        <li>
+            Paste one of the snippets anywhere into your website.
+        </li>
+    </ol>
+
+</header>
+<section>
+    <ul class="icon-boxes">
+        
+
+        <li title="arrow-left">
+            <div class="icon-box" id="icon-box-arrow-left">
+                <svg class="icon arrow-left">
+                    <use xlink:href="#arrow-left" />
+                </svg>
+            </div>
+            <h2>arrow-left</h2>
+            <button onclick="showPopover('snippet-arrow-left')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-arrow-left')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-arrow-left">
+                <pre><code>&lt;svg class=&quot;icon arrow-left&quot;&gt;&lt;use xlink:href=&quot;#arrow-left&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="arrow-right">
+            <div class="icon-box" id="icon-box-arrow-right">
+                <svg class="icon arrow-right">
+                    <use xlink:href="#arrow-right" />
+                </svg>
+            </div>
+            <h2>arrow-right</h2>
+            <button onclick="showPopover('snippet-arrow-right')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-arrow-right')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-arrow-right">
+                <pre><code>&lt;svg class=&quot;icon arrow-right&quot;&gt;&lt;use xlink:href=&quot;#arrow-right&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="arrow-right-green">
+            <div class="icon-box" id="icon-box-arrow-right-green">
+                <svg class="icon arrow-right-green">
+                    <use xlink:href="#arrow-right-green" />
+                </svg>
+            </div>
+            <h2>arrow-right-green</h2>
+            <button onclick="showPopover('snippet-arrow-right-green')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-arrow-right-green')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-arrow-right-green">
+                <pre><code>&lt;svg class=&quot;icon arrow-right-green&quot;&gt;&lt;use xlink:href=&quot;#arrow-right-green&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="arrow-right-white">
+            <div class="icon-box" id="icon-box-arrow-right-white">
+                <svg class="icon arrow-right-white">
+                    <use xlink:href="#arrow-right-white" />
+                </svg>
+            </div>
+            <h2>arrow-right-white</h2>
+            <button onclick="showPopover('snippet-arrow-right-white')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-arrow-right-white')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-arrow-right-white">
+                <pre><code>&lt;svg class=&quot;icon arrow-right-white&quot;&gt;&lt;use xlink:href=&quot;#arrow-right-white&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="call">
+            <div class="icon-box" id="icon-box-call">
+                <svg class="icon call">
+                    <use xlink:href="#call" />
+                </svg>
+            </div>
+            <h2>call</h2>
+            <button onclick="showPopover('snippet-call')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-call')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-call">
+                <pre><code>&lt;svg class=&quot;icon call&quot;&gt;&lt;use xlink:href=&quot;#call&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="caret-down">
+            <div class="icon-box" id="icon-box-caret-down">
+                <svg class="icon caret-down">
+                    <use xlink:href="#caret-down" />
+                </svg>
+            </div>
+            <h2>caret-down</h2>
+            <button onclick="showPopover('snippet-caret-down')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-caret-down')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-caret-down">
+                <pre><code>&lt;svg class=&quot;icon caret-down&quot;&gt;&lt;use xlink:href=&quot;#caret-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="check">
+            <div class="icon-box" id="icon-box-check">
+                <svg class="icon check">
+                    <use xlink:href="#check" />
+                </svg>
+            </div>
+            <h2>check</h2>
+            <button onclick="showPopover('snippet-check')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-check')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-check">
+                <pre><code>&lt;svg class=&quot;icon check&quot;&gt;&lt;use xlink:href=&quot;#check&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="cross">
+            <div class="icon-box" id="icon-box-cross">
+                <svg class="icon cross">
+                    <use xlink:href="#cross" />
+                </svg>
+            </div>
+            <h2>cross</h2>
+            <button onclick="showPopover('snippet-cross')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-cross')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-cross">
+                <pre><code>&lt;svg class=&quot;icon cross&quot;&gt;&lt;use xlink:href=&quot;#cross&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="info-circle">
+            <div class="icon-box" id="icon-box-info-circle">
+                <svg class="icon info-circle">
+                    <use xlink:href="#info-circle" />
+                </svg>
+            </div>
+            <h2>info-circle</h2>
+            <button onclick="showPopover('snippet-info-circle')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-info-circle')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-info-circle">
+                <pre><code>&lt;svg class=&quot;icon info-circle&quot;&gt;&lt;use xlink:href=&quot;#info-circle&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="mail">
+            <div class="icon-box" id="icon-box-mail">
+                <svg class="icon mail">
+                    <use xlink:href="#mail" />
+                </svg>
+            </div>
+            <h2>mail</h2>
+            <button onclick="showPopover('snippet-mail')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-mail')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-mail">
+                <pre><code>&lt;svg class=&quot;icon mail&quot;&gt;&lt;use xlink:href=&quot;#mail&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="paperclip">
+            <div class="icon-box" id="icon-box-paperclip">
+                <svg class="icon paperclip">
+                    <use xlink:href="#paperclip" />
+                </svg>
+            </div>
+            <h2>paperclip</h2>
+            <button onclick="showPopover('snippet-paperclip')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-paperclip')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-paperclip">
+                <pre><code>&lt;svg class=&quot;icon paperclip&quot;&gt;&lt;use xlink:href=&quot;#paperclip&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="swipe-icon">
+            <div class="icon-box" id="icon-box-swipe-icon">
+                <svg class="icon swipe-icon">
+                    <use xlink:href="#swipe-icon" />
+                </svg>
+            </div>
+            <h2>swipe-icon</h2>
+            <button onclick="showPopover('snippet-swipe-icon')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-swipe-icon')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-swipe-icon">
+                <pre><code>&lt;svg class=&quot;icon swipe-icon&quot;&gt;&lt;use xlink:href=&quot;#swipe-icon&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+    </ul>
+</section>
+<footer>
+    <p>Generated by <a href="https://github.com/shakyshane/gulp-svg-sprites">Gulp Svg Sprites</a> - Preview page courtesy of <a href="http://iconizr.com" target="_blank">iconizr</a>.</p>
+</footer>
+<script type="text/javascript">
+    var openSnippet;
+    function showPopover(id) {
+        openSnippet = document.getElementById(id);
+        openSnippet.classList.add("active");
+    }
+    function hidePopover() {
+
+        openSnippet.classList.remove("active");
+    }
+    function invertBackground(id) {
+        var elem = document.getElementById(id);
+        elem.classList.toggle("inverted");
+    }
+</script>
+</body>
+</html>
