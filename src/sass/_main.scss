@@ -1124,8 +1124,10 @@
 .contacts {
   &-section {
     background-color: $bg-blue;
-    padding-top: 100px;
+    // padding-top: 100px;
     padding-bottom: 180px;
+    margin-top: -140px;
+    padding-top: 240px;
 
     @media(max-width: 1366px) {
       padding-bottom: 180px;
@@ -1133,21 +1135,25 @@
   
     @media(max-width: 1024px) {
       padding-bottom: 100px;
-      padding-top: 90px;    
+      // padding-top: 90px;    
+      padding-top: 230px;
     }
   
     @media(max-width: 960px) {
       padding-bottom: 80px;
-      padding-top: 80px;
+      // padding-top: 80px;
+      padding-top: 220px;
     }
   
     @media(max-width: 768px) {
       padding-bottom: 60px;
-      padding-top: 70px;
+      // padding-top: 70px;
+      padding-top: 210px;
     }
 
     @media(max-width: 599px) {     
-      padding-top: 60px;
+      // padding-top: 60px;
+      padding-top: 200px;
     }
   }
   &-card {
