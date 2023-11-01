@@ -2718,9 +2718,38 @@ article {
   padding-top: 100px;
   padding-bottom: 200px;
 
+  @media (max-width: 1366px) {
+    padding-top: 80px;
+    padding-bottom: 140px;
+  }
+
+  @media (max-width: 960px) {
+    @include fz(16);
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: 599px) {
+    @include fz(16);
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
   h2 {
     text-align: center;
     margin-bottom: 50px;
+
+    @media (max-width: 599px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  h6 {
+    margin-bottom: 18px;
   }
 
   ul {    
@@ -2728,6 +2757,11 @@ article {
       position: relative;
       padding-left: 34px;
       margin-bottom: 20px;
+
+      @media (max-width: 599px) {
+        margin-bottom: 12px;
+        padding-left: 18px;
+      }
 
       &::before {
         content: '';
@@ -2738,6 +2772,11 @@ article {
         height: 6px;
         background-color: $font;
         border-radius: 50%;
+
+        @media (max-width: 599px) {
+          top: 7px;
+          left: 2px;
+        }
       }
     }
   }
@@ -2759,6 +2798,11 @@ article {
     opacity: 0.6;
     text-align: center;
     margin-bottom: 24px;
+
+    @media (max-width: 599px) {
+      @include fz(14);
+      margin-bottom: 12px;
+    }
   }
 
   &-navigation {
@@ -2770,11 +2814,47 @@ article {
     justify-content: space-between;
     align-items: center;
 
+    @media (max-width: 1366px) {
+      margin-top: 65px;
+    }
+
+    @media (max-width: 960px) {
+      margin-top: 50px;
+    }
+
+    @media (max-width: 599px) {
+      margin-top: 40px;
+    }
+
     &-item {
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 20px;
+
+      span {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+        .ui-btn-nav {
+          transition: background-color 0.3s;
+          background-color: $primary;
+        }
+        
+        .icon {
+          transition: stroke 0.3s;
+          stroke: #FFF;
+        }
+
+        span {
+          transition: opacity 0.3s;
+          opacity: 0.8;
+        }
+      }
     }
   }
 }

@@ -1,5 +1,9 @@
 p {
 	margin: $paragraph_margin;
+
+	@media (max-width: 599px) {
+		margin-bottom: 12px;
+	}
 }
 ul, ol {
 	padding: 0px;
@@ -29,7 +33,19 @@ h1, .h1 {
 }
 h2, .h2, .ui-h2 {
 	@include fz($h2);
-	line-height: 1.2;	
+	line-height: 1.2;
+
+	@media (max-width: 960px) {
+		@include fz(42);
+	}
+
+	@media (max-width: 599px) {
+		@include fz(32);
+	}
+
+	@media (max-width: 480px) {
+		@include fz(28);
+	}
 }
 h3, .h3, .ui-h3 {
 	@include fz($h3);
@@ -37,6 +53,10 @@ h3, .h3, .ui-h3 {
 }
 h4, .h4, .ui-h4 {
 	@include fz($h4);
+
+	@media (max-width: 599px) {
+		@include fz(22);
+	}
 }
 h5, .h5 {
 	@include fz($h5);
@@ -45,6 +65,10 @@ h6, .h6, .ui-h5 {
 	@include fz($h6);
 	text-transform: none;
 	font-weight: 700;
+
+	@media (max-width: 599px) {
+		@include fz(16);
+	}
 }
 .ui-font-midi {
 	@include fz(16);
