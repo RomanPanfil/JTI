@@ -163,7 +163,7 @@ img {
 .block-title {	
 	@include fz(48);
 	text-align: center;
-	margin-bottom: 90px;
+	margin-bottom: 80px;
 	font-weight: 700;
 	line-height: 120%;
 	@include ls(0.48);
@@ -262,7 +262,9 @@ img {
 
 .ui-btn {	
 
-	&-main {		
+	&-main {
+		display: flex;
+		align-items: center;	
 		width: max-content;
 		padding-left: 40px;
 		padding-right: 40px;
@@ -310,7 +312,7 @@ img {
 		
 
 		span {
-			margin-right: 10px;
+			margin-right: 6px;
 			display: inline-block;
 			vertical-align: middle;
 
@@ -325,6 +327,7 @@ img {
 			height: 32px;
 			display: inline-block;
 			vertical-align: middle;
+			stroke-width: 1.5px;
 
 			@media(max-width: 768px) {
 				width: 28px;
