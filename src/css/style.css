@@ -1610,6 +1610,8 @@ img {
     scrollbar-width: none;
     padding-left: 15px;
     padding-right: 15px;
+    margin-left: -30px;
+    margin-right: -30px;
   }
   .row__nowrap-mobile::-webkit-scrollbar {
     display: none;
@@ -4014,7 +4016,7 @@ img {
   line-height: 140%;
   letter-spacing: 0.48px;
   letter-spacing: 0.03rem;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 @media (max-width: 599px) {
   .characteristic-item-head {
@@ -4124,12 +4126,11 @@ img {
   }
 }
 .format-card-image {
-  height: 223px;
+  aspect-ratio: 0.9;
   margin-bottom: 14px;
 }
 @media (max-width: 599px) {
   .format-card-image {
-    height: 160px;
     margin-bottom: 10px;
   }
 }
@@ -4141,7 +4142,6 @@ img {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 700;
-  line-height: 140%;
   letter-spacing: 0.36px;
   letter-spacing: 0.0225rem;
   margin-bottom: 8px;
@@ -4216,19 +4216,8 @@ img {
 
 .description-wrapper {
   display: none;
-  margin-bottom: 12px;
-}
-@media (max-width: 960px) {
-  .description-wrapper {
-    margin-right: -30px;
-    margin-left: -30px;
-  }
-}
-@media (max-width: 420px) {
-  .description-wrapper {
-    margin-right: -20px;
-    margin-left: -20px;
-  }
+  margin-bottom: 36px;
+  position: relative;
 }
 .description-wrapper.active {
   display: block;
@@ -4240,12 +4229,23 @@ img {
   -webkit-box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
           box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
   padding: 40px 70px 40px 40px;
-  height: calc(100% - 40px);
-  margin-bottom: 40px;
+  height: calc(100% - 20px);
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+}
+@media (max-width: 960px) {
+  .description-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 30px 40px 30px 30px;
+    height: calc(100% - 30px);
+    margin-bottom: 30px;
+  }
 }
 @media (max-width: 599px) {
   .description-card {
@@ -4265,7 +4265,7 @@ img {
       flex-shrink: 0;
 }
 .description-card-image img {
-  width: 100%;
+  max-height: 74px;
 }
 .description-card-title {
   font-size: 20px;
