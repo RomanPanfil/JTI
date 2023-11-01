@@ -909,6 +909,7 @@ img {
   -webkit-transition: 0.3s stroke;
   -o-transition: 0.3s stroke;
   transition: 0.3s stroke;
+  stroke-width: 1.5px;
 }
 .ui-btn-nav .icon-white {
   stroke: #fff;
@@ -1255,6 +1256,8 @@ img {
 .ui-lines {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -3135,8 +3138,8 @@ img {
   border-radius: 30px;
   border: 1px solid rgba(42, 45, 51, 0.1);
   background: #FFF;
-  -webkit-box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
-          box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 4px 2px 10px 0px rgba(0, 0, 0, 0.04);
+          box-shadow: 4px 2px 10px 0px rgba(0, 0, 0, 0.04);
   padding: 40px 24px;
   text-align: center;
   height: calc(100% - 20px);
@@ -3290,7 +3293,7 @@ img {
 }
 .product-card {
   margin-top: 100px;
-  margin-bottom: 234px;
+  margin-bottom: 220px;
 }
 @media (max-width: 1366px) {
   .product-card {
@@ -3421,6 +3424,7 @@ img {
   height: 39px;
 }
 .product-head-back {
+  display: block;
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 120%;
@@ -3433,10 +3437,34 @@ img {
     display: none;
   }
 }
+.product-head-back span {
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.product-head-back .product-head-btn {
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.product-head-back .icon {
+  -webkit-transition: stroke 0.3s;
+  -o-transition: stroke 0.3s;
+  transition: stroke 0.3s;
+}
+.product-head-back:hover span {
+  opacity: 0.8;
+}
+.product-head-back:hover .product-head-btn {
+  background-color: #2A2D33;
+}
+.product-head-back:hover .icon {
+  stroke: #FFF;
+}
 .product-head-btn {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 20px;
+  margin-right: 16px;
 }
 .product-head span {
   display: inline-block;
@@ -3589,6 +3617,10 @@ img {
 }
 .product-slider {
   margin-bottom: 40px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 @media (max-width: 479px) {
   .product-slider {
@@ -3699,7 +3731,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   line-height: 140%;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 .feedback-warning {
   max-width: 740px;

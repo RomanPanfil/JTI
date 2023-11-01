@@ -109,14 +109,14 @@
                   <div class="product-head-new">
                     <img src="./images/new-horizontal.svg" alt="new">
                   </div>
-                  <div class="product-head-back">
-                    <a href="#" class="ui-btn ui-btn-nav product-head-btn">
+                  <a href="#" class="product-head-back">
+                    <button  class="ui-btn ui-btn-nav product-head-btn">
                       <svg class="icon icon-grey">
                         <use xlink:href="svg/svg/symbols.svg#arrow-left" />
                       </svg>
-                    </a>
+                    </button>
                     <span>вернуться назад</span>
-                  </div>                            
+                  </a>                            
                 </div>
                 <div class="product-title">
                   Winston - XS Blue
@@ -434,17 +434,35 @@
       </div>
 
       <div class="feedback-section">
+        <div class="ui-lines">
+          <div class="container-lines">
+            <div class="feedback-section-line ui-line ui-line-1">            
+            </div>
+            <div class="feedback-section-line ui-line ui-line-2">            
+            </div>
+            <div class="feedback-section-line ui-line ui-line-3">            
+            </div>
+            <div class="feedback-section-line ui-line ui-line-4">            
+            </div>
+            <div class="feedback-section-line ui-line ui-line-5">            
+            </div>
+            <div class="feedback-section-line ui-line ui-line-6">            
+            </div>
+            <div class="feedback-section-line ui-line ui-line-7">          
+            </div>
+          </div>
+        </div>
         <div class="container">
           <div class="container-small">
-            <div class="feedback-title block-title">
+            <div class="feedback-title block-title bg-white">
               У вас есть вопрос о нашей фабрике или продукции?
             </div>
-            <div class="feedback-warning">
+            <div class="feedback-warning bg-white">
               Пожалуйста, заполните электронную форму обратной связи. Подача и рассмотрение 
               обращений регламентируются Законом «Об обращениях граждан и юридических лиц».
             </div>
             <form class="feedback-form">
-              <div class="feedback-form-fields">
+              <div class="feedback-form-fields bg-white">
                 <div class="feedback-item__field feedback-item-half">
                   <div class="ui-field">
                     <input type="text" required class="ui-input" name="subject" id="subject">                    
@@ -481,7 +499,7 @@
                   </div>
                 </div>                
               </div>              
-              <div class="feedback-tooltip">
+              <div class="feedback-tooltip bg-white">
                 <span>* </span>- Поля, обязательные для заполнения
               </div>
               <div class="feedback-send">
@@ -489,23 +507,23 @@
                   <svg class="icon">
                     <use xlink:href="svg/svg/symbols.svg#paperclip" />
                   </svg>
-                  <span>Прикрепить файл</span>    
+                  <span>Прикрепить файл</span>              
                   <input type="file" id="file" class="ui-input-file">
                 </label>
-                <div class="feedback-submit">
+                <div class="feedback-submit bg-white">
                   <button type="submit" class="ui-btn-main">
                     <span>Отправить сообщение</span>
                     <svg class="icon icon-green">
                       <use xlink:href="svg/svg/symbols.svg#arrow-right" />
                     </svg>
                   </button>
-                  <div class="feedback-agree">
+                  <div class="feedback-agree bg-white">
                     Нажимая на кнопку, вы даете согласие на <a href="#" target="_blank" class="ui-link">обработку данных</a>
                   </div>
                 </div>                
               </div>
             </form>
-          </div>
+          </div>          
         </div>
       </div>
       
@@ -514,9 +532,19 @@
           $.validator.addMethod("noDigits", function(value, element) {
             return this.optional(element) || !/\d/.test(value);
           }, 'В этом поле нельзя вводить цифры');
-
+  
+          $.validator.addMethod("phone", function (value, element) {
+          if (value.startsWith('+375')) {
+            return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){12}(\s*)?$/i.test(value);
+          } else if (value.startsWith('+7')) {
+            return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/i.test(value);
+          } else {
+            return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,14}(\s*)?$/i.test(value);
+          }
+        }, "Введите полный номер");   
+  
           $.validator.messages.required = 'Пожалуйста, заполните это поле';
-
+  
           $(".feedback-form").validate({
             submitHandler: function(form, event) {
               event.preventDefault();
@@ -527,198 +555,13 @@
               name: { noDigits: true, required: true },
               number: { required: true },
               email: { required: true },
-              phone: { required: true },
+              phone: { phone: true, required: true },
               message: { required: true }
-            }
+            },
           });
-        });
+        });     
+          
       </script>
     </main>
 
-    <!-- footer start -->
-    <footer class="footer">
-      <div class="container">
-        <div class="ui-lines">
-          <div class="footer-line ui-line ui-line-1">
-          </div>
-          <div class="footer-line ui-line ui-line-2">
-          </div>
-          <div class="footer-line ui-line ui-line-3">
-          </div>          
-          <div class="footer-line ui-line ui-line-4">
-          </div>
-          <div class="footer-line ui-line ui-line-5">
-          </div>
-          <div class="footer-line ui-line ui-line-6">
-          </div>
-          <div class="footer-line ui-line ui-line-7">
-          </div>
-        </div>
-        <div class="container-footer">
-          <div class="footer-top">
-            <div class="footer-logo">
-              <a href="#">
-                <img src="./images/logo.svg" alt="JTI">
-              </a>
-            </div>           
-            <ul class="footer-brands footer-links">
-              <li>
-                <a href="#">
-                  Winston 
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  LD
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Sobranie
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Richmond
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Camel
-                </a>
-              </li>    
-            </ul>
-            <nav class="footer-nav footer-links">
-              <ul>
-                <li>
-                  <a href="#">
-                    Продукция
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Новости
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Контакты
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer-bottom">
-            <div class="footer-copy">
-              © 2023 ООО «JT International»
-            </div>
-            <div class="footer-confident">
-              <a href="#" target="_blank" class="footer-confident-link">
-                Политика конфиденциальности
-              </a>
-              <a href="#" target="_blank" class="footer-confident-link">
-                Настройки cookies
-              </a>
-            </div>
-            <div class="footer-address">
-              123112, Москва, 1-й Красногвардейский проезд, д. 15, этажи 28-32
-            </div>
-          </div>
-        </div>       
-      </div>
-    </footer>
-    <div class="bottom-info">
-      <div class="cookies">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-6 col-md-5">
-              <div class="cookies-text">
-                Для обеспечения удобства пользователей сайта используются cookies. 
-                Вы можете настроить файлы cookie или отключить их.
-              </div>            
-            </div>
-            <div class="col-xl-3 col-md-3 col-sm-6">
-              <div class="cookies-btns">
-                <button class="ui-btn-white ui-btn-middle cookies-btn">
-                  Принять
-                </button>
-                <button class="ui-btn-transparent ui-btn-middle cookies-btn">
-                  Отклонить
-                </button>              
-              </div>                    
-            </div>
-            <div class="col-xl-2 col-md-3 col-sm-11 col-xs-11 col-us-10 self-center">            
-              <a href="#" class="cookies-set">
-                Настроить файлы cookie
-              </a>
-            </div>
-            <div class="col-xl-1 col-md-1 col-sm-1 col-xs-1 col-us-2 self-center">
-              <button class="ui-btn-cross">
-                <svg class="icon">
-                  <use xlink:href="svg/svg/symbols.svg#cross" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="warning">
-        <div class="container">
-          КУРЕНИЕ ОПАСНО ДЛЯ ЗДОРОВЬЯ
-        </div>
-      </div>
-    </div>
-    <!-- footer end -->
-
-    <!-- mobile menu start -->
-    <div class="mobile-menu">
-      <div class="mobile-menu-wrapper">
-        <div class="container">
-          <nav class="mobile-nav">
-            <ul></ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <!-- mobile menu end -->
-  </div>
-
-  <div class="confirm">
-    
-      <div class="confirm-wrapper">
-        <a href="#" class="confirm-logo">
-          <img src="./images/logo-white.svg" alt="JTI">
-        </a>
-        <div class="confirm-content">
-          <div class="confirm-title">
-            Вам исполнилось 18 лет?
-          </div>
-          <div class="confirm-buttons">
-            <button class="ui-btn-circle confirm-btn" data-answer="no">
-              Нет
-            </button>
-            <button class="ui-btn-circle confirm-btn" data-answer="yes">
-              Да
-            </button>            
-          </div>
-        </div>
-        <div class="confirm-warning">
-          Перейдя на сайт, Вы принимаете наше <a href="#" target="_blank">пользовательское соглашение</a>
-        </div>
-      </div>    
-  </div>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" defer></script>
-  <script src="https://unpkg.com/imask"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
-  integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
-
-  <script src="./scripts/scripts.js"></script>
-</body>
-
-</html>
+<!--#include file="inc-footer.html"-->        
