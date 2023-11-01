@@ -1945,6 +1945,7 @@
   &-row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-left: -10px;
     margin-right: -10px;
     margin-bottom: 40px;
@@ -1955,6 +1956,21 @@
     flex: 0 0 20%;
     padding-left: 10px;
     padding-right: 10px;
+
+    @media (max-width: 960px) {
+      width: 33.33%;
+      flex: 0 0 33.33%;
+    }
+
+    @media (max-width: 599px) {
+      width: 50%;
+      flex: 0 0 50%;
+    }
+
+    @media (max-width: 420px) {
+      width: 100%;
+      flex: 0 0 100%;
+    }
   }
 
   &-item {    
@@ -2085,12 +2101,47 @@
   }
   &-container {
     padding-bottom: 200px;
+
+    @media (max-width: 1399px) {
+      padding-bottom: 140px;
+    }
+
+    @media (max-width: 960px) {
+      padding-bottom: 100px;
+    }
+
+    @media (max-width: 768px) {
+      padding-bottom: 80px;
+    }
+
+    @media (max-width: 599px) {
+      padding-bottom: 60px;
+    }
   }
   &-wrapper {
     margin-bottom: 40px;
+    align-items: center;
+
+    @media(max-width: 960px) {
+      margin-bottom: 30px;
+      align-items: unset;
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 20px;
+    }
   }
   &-filter {
     margin-bottom: 100px;
+
+    @media (max-width: 960px) {
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 60px;
+    }
 
     &-title {    
       line-height: 120%;
@@ -2103,11 +2154,18 @@
 
 .characteristic {
   &-filter {
+    &-item {
+      height: calc(100% - 20px);
+      margin-bottom: 20px;
+    }
+
     &-head {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      flex-wrap: wrap;
       margin-bottom: 20px;
+      row-gap: 16px;
     }
 
     &-positions {
@@ -2115,13 +2173,14 @@
       border-radius: 20px;
       // border: 1px solid rgba(42, 45, 51, 0.10);     
       box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
-      margin-bottom: 60px;
+      // margin-bottom: 60px;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s;
       
       &.open {
-        padding: 40px 40px 36px 40px;       
+        padding: 40px 40px 36px 40px;
+        margin-bottom: 60px;   
         border: 1px solid rgba(42, 45, 51, 0.10);       
       }
     }
@@ -2129,14 +2188,23 @@
     &-title {
       @include fz(24);
       font-weight: 700;
-      line-height: 120%;
+      line-height: 1.2;
       @include ls(0.24);
       cursor: pointer;
+
+      @media (max-width: 960px) {
+        @include fz(18);
+        @include ls(0.1);
+      }
 
       span {
         display: inline-block;
         vertical-align: middle;
         margin-right: 6px;
+
+        @media (max-width: 960px) {
+          margin-right: 4px;
+        }
       }
 
       .icon {
@@ -2147,6 +2215,12 @@
         vertical-align: middle;
         transition: transform 0.3s;
         stroke: $font;
+        stroke-width: 1.5px;
+
+        @media (max-width: 960px) {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       &.open {
@@ -2161,6 +2235,17 @@
       @include ls(2.4);      
       text-transform: uppercase;
       opacity: 0.6;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 960px) {
+        // display: none;
+        @include fz(14);
+        @include ls(1.8); 
+      }
     }
 
     &-item {

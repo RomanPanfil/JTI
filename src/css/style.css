@@ -887,6 +887,12 @@ img {
   -o-transition: 0.3s background-color;
   transition: 0.3s background-color;
 }
+@media (max-width: 599px) {
+  .ui-btn-nav {
+    width: 40px;
+    height: 40px;
+  }
+}
 .ui-btn-nav__white {
   border-color: #fff;
   -webkit-transition: 0.3s border-color;
@@ -910,6 +916,12 @@ img {
   -o-transition: 0.3s stroke;
   transition: 0.3s stroke;
   stroke-width: 1.5px;
+}
+@media (max-width: 599px) {
+  .ui-btn-nav .icon {
+    width: 26px;
+    height: 26px;
+  }
 }
 .ui-btn-nav .icon-white {
   stroke: #fff;
@@ -1152,6 +1164,13 @@ img {
      -moz-column-gap: 60px;
           column-gap: 60px;
 }
+@media (max-width: 599px) {
+  .pagination {
+    -webkit-column-gap: 16px;
+       -moz-column-gap: 16px;
+            column-gap: 16px;
+  }
+}
 .pagination-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1163,15 +1182,34 @@ img {
      -moz-column-gap: 20px;
           column-gap: 20px;
 }
+@media (max-width: 599px) {
+  .pagination-list {
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
+  }
+}
 .pagination-item {
   font-size: 19px;
   font-size: 1.1875rem;
-  line-height: 120%;
+  line-height: 1.2;
   text-align: center;
+}
+@media (max-width: 599px) {
+  .pagination-item {
+    font-size: 16px;
+    font-size: 1rem;
+  }
 }
 .pagination-item__dots {
   padding-left: 16px;
   padding-right: 16px;
+}
+@media (max-width: 599px) {
+  .pagination-item__dots {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 }
 .pagination-item-link {
   display: inline-block;
@@ -1191,6 +1229,13 @@ img {
 .pagination-item-link:hover {
   background-color: #2A2D33;
   color: #fff;
+}
+@media (max-width: 599px) {
+  .pagination-item-link {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
 }
 
 .ui-checkbox {
@@ -1222,9 +1267,11 @@ img {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.ui-checkbox:hover {
-  border-color: #26A577;
-  background-color: rgba(38, 165, 119, 0.1);
+@media (hover: hover) {
+  .ui-checkbox:hover {
+    border-color: #26A577;
+    background-color: rgba(38, 165, 119, 0.1);
+  }
 }
 
 .ui-radio {
@@ -4679,6 +4726,9 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-left: -10px;
   margin-right: -10px;
   margin-bottom: 40px;
@@ -4690,6 +4740,30 @@ img {
           flex: 0 0 20%;
   padding-left: 10px;
   padding-right: 10px;
+}
+@media (max-width: 960px) {
+  .brands-col {
+    width: 33.33%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33%;
+            flex: 0 0 33.33%;
+  }
+}
+@media (max-width: 599px) {
+  .brands-col {
+    width: 50%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+}
+@media (max-width: 420px) {
+  .brands-col {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
 }
 .brands-item {
   border: 1px solid rgba(42, 45, 51, 0.1);
@@ -4819,11 +4893,58 @@ img {
 .production-container {
   padding-bottom: 200px;
 }
+@media (max-width: 1399px) {
+  .production-container {
+    padding-bottom: 140px;
+  }
+}
+@media (max-width: 960px) {
+  .production-container {
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .production-container {
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 599px) {
+  .production-container {
+    padding-bottom: 60px;
+  }
+}
 .production-wrapper {
   margin-bottom: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 960px) {
+  .production-wrapper {
+    margin-bottom: 30px;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    position: relative;
+  }
+}
+@media (max-width: 480px) {
+  .production-wrapper {
+    margin-bottom: 20px;
+  }
 }
 .production-filter {
   margin-bottom: 100px;
+}
+@media (max-width: 960px) {
+  .production-filter {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 480px) {
+  .production-filter {
+    margin-bottom: 60px;
+  }
 }
 .production-filter-title {
   line-height: 120%;
@@ -4833,6 +4954,10 @@ img {
   margin-bottom: 14px;
 }
 
+.characteristic-filter-item {
+  height: calc(100% - 20px);
+  margin-bottom: 20px;
+}
 .characteristic-filter-head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4843,13 +4968,15 @@ img {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 20px;
+  row-gap: 16px;
 }
 .characteristic-filter-positions {
   border-radius: 20px;
   -webkit-box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
           box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
-  margin-bottom: 60px;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.3s;
@@ -4858,21 +4985,35 @@ img {
 }
 .characteristic-filter-positions.open {
   padding: 40px 40px 36px 40px;
+  margin-bottom: 60px;
   border: 1px solid rgba(42, 45, 51, 0.1);
 }
 .characteristic-filter-title {
   font-size: 24px;
   font-size: 1.5rem;
   font-weight: 700;
-  line-height: 120%;
+  line-height: 1.2;
   letter-spacing: 0.24px;
   letter-spacing: 0.015rem;
   cursor: pointer;
+}
+@media (max-width: 960px) {
+  .characteristic-filter-title {
+    font-size: 18px;
+    font-size: 1.125rem;
+    letter-spacing: 0.1px;
+    letter-spacing: 0.00625rem;
+  }
 }
 .characteristic-filter-title span {
   display: inline-block;
   vertical-align: middle;
   margin-right: 6px;
+}
+@media (max-width: 960px) {
+  .characteristic-filter-title span {
+    margin-right: 4px;
+  }
 }
 .characteristic-filter-title .icon {
   width: 28px;
@@ -4886,6 +5027,13 @@ img {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
   stroke: #2A2D33;
+  stroke-width: 1.5px;
+}
+@media (max-width: 960px) {
+  .characteristic-filter-title .icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 .characteristic-filter-title.open .icon {
   -webkit-transform: rotate(180deg);
@@ -4898,6 +5046,20 @@ img {
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   opacity: 0.6;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.characteristic-filter-link:hover {
+  opacity: 0.8;
+}
+@media (max-width: 960px) {
+  .characteristic-filter-link {
+    font-size: 14px;
+    font-size: 0.875rem;
+    letter-spacing: 1.8px;
+    letter-spacing: 0.1125rem;
+  }
 }
 .characteristic-filter-item label {
   display: -webkit-box;

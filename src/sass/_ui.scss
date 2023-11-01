@@ -422,6 +422,11 @@ img {
 		cursor: pointer;
 		transition: 0.3s background-color;
 
+		@media(max-width: 599px) {
+			width: 40px;
+			height: 40px;
+		}
+
 		&__white {
 			border-color: #fff;
 			transition: 0.3s border-color;
@@ -441,6 +446,11 @@ img {
 			fill: none;
 			transition: 0.3s stroke;
 			stroke-width: 1.5px;
+
+			@media(max-width: 599px) {
+				width: 26px;
+				height: 26px;
+			}
 
 			&-white {
 				stroke: #fff;							
@@ -654,19 +664,37 @@ img {
 	justify-content: center;
 	column-gap: 60px;
 
+	@media(max-width: 599px) {
+		column-gap: 16px;
+	}
+
 	&-list {
 		display: flex;
 		align-items: center;
 		column-gap: 20px;
+
+		@media(max-width: 599px) {
+			column-gap: 10px;
+		}
 	}
 
 	&-item {
 		@include fz(19);
-		line-height: 120%;
+		line-height: 1.2;
 		text-align: center;
+
+		@media(max-width: 599px) {
+			@include fz(16);
+		}
+
 		&__dots {
 			padding-left: 16px;
 			padding-right: 16px;
+
+			@media(max-width: 599px) {
+				padding-left: 4px;
+				padding-right: 4px;
+			}
 		}
 
 		&-link {
@@ -686,6 +714,12 @@ img {
 			&:hover {
 				background-color: $button_main;
 				color: $font_white;
+			}
+
+			@media(max-width: 599px) {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
 			}
 		}
 	}
@@ -720,10 +754,13 @@ img {
 		}
 	}
 
-	&:hover {
-		border-color: #26A577;
-		background-color: rgba(38, 165, 119, 0.1);
+	@media (hover: hover) {
+		&:hover {
+			border-color: #26A577;
+			background-color: rgba(38, 165, 119, 0.1);
+		}
 	}
+	
 }
 
 .ui-radio {
