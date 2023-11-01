@@ -2387,13 +2387,18 @@
   &-text {
     max-width: 627px;
     margin-left: auto;
-    margin-right: 80px;    
+    margin-right: 80px;
+    
+    @media(max-width: 1439px) {
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 20px;
+      max-width: max-content;
+    }
 
     @media(max-width: 1023px) {
       margin-right: 0;
-      margin-left: 0;
-      margin-bottom: 20px;
-      max-width: unset;
+      margin-left: 0;     
     }
   }
 
