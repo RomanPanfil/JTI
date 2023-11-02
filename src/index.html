@@ -660,9 +660,19 @@
                 $.validator.addMethod("noDigits", function(value, element) {
                   return this.optional(element) || !/\d/.test(value);
                 }, 'В этом поле нельзя вводить цифры');
-      
+        
+                $.validator.addMethod("phone", function (value, element) {
+                if (value.startsWith('+375')) {
+                  return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){12}(\s*)?$/i.test(value);
+                } else if (value.startsWith('+7')) {
+                  return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/i.test(value);
+                } else {
+                  return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,14}(\s*)?$/i.test(value);
+                }
+              }, "Введите полный номер");   
+        
                 $.validator.messages.required = 'Пожалуйста, заполните это поле';
-      
+        
                 $(".feedback-form").validate({
                   submitHandler: function(form, event) {
                     event.preventDefault();
@@ -673,11 +683,12 @@
                     name: { noDigits: true, required: true },
                     number: { required: true },
                     email: { required: true },
-                    phone: { required: true },
+                    phone: { phone: true, required: true },
                     message: { required: true }
-                  }
+                  },
                 });
-              });
+              });     
+                
             </script>
 
           </div>          

@@ -439,6 +439,11 @@ img {
 		cursor: pointer;
 		transition: 0.3s opacity;
 
+		@media(max-width: 480px) {
+			width: 70px;
+			height: 70px;
+		}
+
 		&:hover {
 			opacity: 0.8;
 		}

@@ -918,6 +918,12 @@ img {
   -o-transition: 0.3s opacity;
   transition: 0.3s opacity;
 }
+@media (max-width: 480px) {
+  .ui-btn-circle {
+    width: 70px;
+    height: 70px;
+  }
+}
 .ui-btn-circle:hover {
   opacity: 0.8;
 }
@@ -5724,9 +5730,32 @@ img {
   height: 100%;
   padding: 200px 30px 46px 30px;
 }
+@media (max-width: 1680px) {
+  .confirm-wrapper {
+    padding: 160px 30px 36px 30px;
+  }
+}
+@media (max-width: 1366px) {
+  .confirm-wrapper {
+    padding: 140px 30px 36px 30px;
+  }
+}
+@media (max-width: 960px) {
+  .confirm-wrapper {
+    padding: 60px 30px 46px 30px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
 .confirm-logo {
   display: block;
   text-align: center;
+  max-width: 80px;
+}
+@media (max-width: 480px) {
+  .confirm-logo {
+    max-width: 60px;
+  }
 }
 .confirm-content {
   text-align: center;
@@ -5740,6 +5769,15 @@ img {
   letter-spacing: 0.0675rem;
   margin-bottom: 60px;
 }
+@media (max-width: 480px) {
+  .confirm-title {
+    font-size: 36px;
+    font-size: 2.25rem;
+  }
+}
+.confirm-buttons {
+  margin-bottom: 32px;
+}
 .confirm-btn:not(:last-child) {
   margin-right: 100px;
 }
@@ -5749,6 +5787,7 @@ img {
   line-height: 120%;
   letter-spacing: 0.32px;
   letter-spacing: 0.02rem;
+  text-align: center;
 }
 .confirm-warning a {
   color: #00B185;
@@ -5928,6 +5967,11 @@ article a:hover {
   margin-right: auto;
   padding: 40px;
 }
+@media (max-width: 480px) {
+  .popup-success {
+    padding: 20px;
+  }
+}
 .popup-success .mfp-close {
   display: none;
 }
@@ -5947,6 +5991,14 @@ article a:hover {
   height: 40px;
   border-radius: 50%;
   border: 1px solid #26A577;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .success-image {
+    width: 36px;
+    height: 36px;
+  }
 }
 .success-image .icon {
   position: absolute;
@@ -5964,9 +6016,21 @@ article a:hover {
   font-size: 1.25rem;
   font-weight: 700;
 }
+@media (max-width: 480px) {
+  .success-title {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
 .success-text {
   font-weight: 300;
   opacity: 0.6;
+}
+@media (max-width: 480px) {
+  .success-text {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
 }
 
 .burger-btn {
