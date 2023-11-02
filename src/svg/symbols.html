@@ -188,6 +188,10 @@
 			<path d="M25.5 7l-18 18M25.5 25L7.5 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 		</symbol>
 	
+		<symbol id="cross-black" viewBox="0 0 24 24">
+			<path d="M18.75 5.25l-13.5 13.5M18.75 18.75L5.25 5.25" stroke="#2A2D33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
 		<symbol id="info-circle" viewBox="0 0 24 24">
 			<g opacity=".6" stroke="#26A577" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM12 8v5" stroke-width="1.5"></path><path d="M11.995 16h.009" stroke-width="2"></path></g>
 		</symbol>
@@ -207,7 +211,7 @@
 </svg>
 
 <header>
-    <h1 id="logo">Gulp SVG Sprites <small>(12 icons in &lt;symbol&gt; mode)</small></h1>
+    <h1 id="logo">Gulp SVG Sprites <small>(13 icons in &lt;symbol&gt; mode)</small></h1>
     <h4>Files Generated:</h4>
     <ol>
         <li><a href="svg/symbols.svg">svg/symbols.svg</a></li>
@@ -358,6 +362,23 @@
             <button onclick="invertBackground('icon-box-cross')">Invert Background</button>
             <div class="snippet-popover" id="snippet-cross">
                 <pre><code>&lt;svg class=&quot;icon cross&quot;&gt;&lt;use xlink:href=&quot;#cross&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="cross-black">
+            <div class="icon-box" id="icon-box-cross-black">
+                <svg class="icon cross-black">
+                    <use xlink:href="#cross-black" />
+                </svg>
+            </div>
+            <h2>cross-black</h2>
+            <button onclick="showPopover('snippet-cross-black')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-cross-black')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-cross-black">
+                <pre><code>&lt;svg class=&quot;icon cross-black&quot;&gt;&lt;use xlink:href=&quot;#cross-black&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
                 <button onclick="hidePopover()">Close</button>
             </div>
         </li>

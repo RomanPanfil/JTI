@@ -1712,14 +1712,14 @@
       }
 
       &-2 {
-        top: 53%;
+        top: 57%;
         left: 0%;
         width: 16.6%;
       }
 
       &-3 {
         // top: 16.5%;
-        top: 28.5%; 
+        top: 30.5%; 
         left: 50%;
         width: 16.6%;
       }
@@ -3200,6 +3200,109 @@ article {
         transition: transform 0.3s;
         stroke: $primary;
       }
+    }
+  }
+}
+
+// popup notificatios
+.popup-notifications {
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px 20px;
+  max-width: min(80vw, 1034px);  
+  margin-left: auto;
+  margin-right: auto; 
+
+  @media (max-width: 960px) {
+    max-width: 90vw;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 599px) {
+    padding: 30px 10px 10px 10px;
+  }
+
+  p {
+    @media (max-width: 599px) {
+      @include fz(14);
+    }
+  }
+
+  h6 {
+    @media (max-width: 599px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-wrapper {
+    padding: 0 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;     
+
+      @media (max-width: 960px) {
+        width: 2px;
+      }
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 4px;     
+      background-color: #C8DDE4;
+      
+      @media (max-width: 960px) {
+        width: 2px;   
+      }
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: lighten(#C8DDE4, 8%);
+    }
+
+    @media (max-width: 599px) {
+      padding: 10px;
+    }
+  }
+
+  .mfp-close {   
+    @include fz(0);
+    width: 44px;
+    height: 44px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: translateX(100%);
+    right: -20px;
+    opacity: 1;
+    background-image: url(../images/svg/cross-black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    transition: opacity 0.3s;
+
+    @media (max-width: 1366px) {
+      width: 38px;
+      height: 38px;
+    }
+
+    @media (max-width: 960px) {
+      width: 36px;
+      height: 36px;
+      transform: unset;
+      right: 0;
+      background-color: transparent;
+    }
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .ui-btn-main {
+    text-align: center;
+    margin-top: 40px;
+
+    @media (max-width: 599px) {
+      margin-top: 20px;
     }
   }
 }
