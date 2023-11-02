@@ -307,10 +307,10 @@ img {
 		display: inline-block;
 
 		@media(max-width: 768px) {
-			@include ls(2.4);			
+			@include ls(2.4);
 			@include fz(16);
-			height: 72px;
-			line-height: 72px;
+			height: 64px;
+			line-height: 64px;
 			padding-left: 20px;
 			padding-right: 20px;
 		}
@@ -412,6 +412,15 @@ img {
 		outline: none;		
 		transition: color 0.3s, background-color 0.3s;
 		display: inline-block;
+
+		@media(max-width: 768px) {
+			padding-left: 32px;
+			padding-right: 32px;
+			height: 64px;
+			line-height: 64px;
+			@include fz(16);			
+			@include ls(2.4);
+		}
 
 		&:hover {			
 			background-color: #fff;
@@ -636,6 +645,13 @@ img {
 		display: inline-block;
 		vertical-align: middle;
 		margin-right: 8px;
+		stroke-width: 1.5px;
+
+		@media(max-width: 420px) {
+			width: 24px;
+			height: 24px;
+			margin-right: 4px;
+		}
 	}
 }
 
