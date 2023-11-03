@@ -2660,8 +2660,7 @@
     margin-right: 80px;
     
     @media(max-width: 1439px) {
-      margin-right: auto;
-      margin-left: auto;
+      margin-left: unset;
       margin-bottom: 20px;
       max-width: max-content;
     }
@@ -2675,12 +2674,16 @@
   &-btns {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: center;    
     gap: 14px;
 
-    @media(max-width: 1023px) {     
-      margin-bottom: 20px;
+    @media(max-width: 1439px) {
+      justify-content: flex-start;
+      flex-wrap: wrap;    
+    }
+
+    @media(max-width: 1023px) {
+      margin-bottom: 20px;      
     }
   }
 
@@ -2694,6 +2697,7 @@
     @include fz(18);    
     line-height: 140%;
     @include ls(0.18);
+    white-space: nowrap;
     border-bottom: 1px dashed #fff;
 
     &:hover {
