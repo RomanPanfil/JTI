@@ -170,13 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMask();
 
   // стилизация чекбокса и радио-кнопки
-  (function() {
-    const elements = document.querySelectorAll('.ui-checkbox, .ui-radio');
-
-    Array.from(elements).forEach(function(element) {
-      $(element).styler();
-    });
-  })();
+  $('.ui-checkbox, .ui-radio').styler();
 
   // раскрытие фильтрации
   (function() {
@@ -308,6 +302,22 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       });
     })();
+
+
+    // высота texarea
+    (function() {
+      let textarea = document.querySelectorAll('.ui-textarea');
+
+      textarea.forEach(el => {
+        el.addEventListener('input', autoResize);
+        el.setAttribute('rows', '1');
+      })    
+
+      function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+      }
+    })();   
 
 });
 

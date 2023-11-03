@@ -1092,7 +1092,6 @@ img {
 
 .ui-field {
   position: relative;
-  height: 38px;
 }
 .ui-field label.error {
   position: absolute;
@@ -1213,7 +1212,7 @@ img {
   outline: none;
   width: 100%;
   resize: none;
-  height: 38px;
+  max-height: 150px;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

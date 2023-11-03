@@ -598,7 +598,7 @@ img {
 
 .ui-field {
 	position: relative;
-	height: 38px;	
+	// height: 38px;	
 
 	label.error {
 		position: absolute;
@@ -708,7 +708,8 @@ img {
 	outline: none;
 	width: 100%;
 	resize: none;
-	height: 38px;	
+	// height: 38px;
+	max-height: 150px;	
 
 	&::placeholder {
 		color: $font;
