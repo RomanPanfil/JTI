@@ -220,16 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
     lis.forEach(li => {
       const a = li.querySelector('a');
 
-      if (a && li.querySelector('ul')) {       
-        const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-        svg.classList.add('icon');
-
-        const use = document.createElementNS('http://www.w3.org/2000/svg','use');
-        use.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href','svg/svg/symbols.svg#caret-down');
-
-        svg.appendChild(use);
-        
-        a.insertAdjacentElement('afterend', svg);
+      if (a && li.querySelector('ul')) {
+        const icon = document.createElement('span');
+        icon.setAttribute('class', 'icon');
+        a.insertAdjacentElement('afterend', icon);
       }
     });
     

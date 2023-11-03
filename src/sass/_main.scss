@@ -120,12 +120,13 @@
         vertical-align: middle;
         width: 22px;
         height: 22px;
-        fill: none;
+        background-image: url(../images/caret-down_black.svg);       
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.3s transform;
         cursor: pointer;
         margin-left: 4px;
-        transition: 0.3s transform;
-        stroke: $primary;
-        stroke-width: 1.5px; 
       }
     }
   }
@@ -152,7 +153,7 @@
       }
       
       .icon {
-        stroke: #fff;
+        background-image: url(../images/caret-down_white.svg);        
       }
     }
   }
@@ -2833,7 +2834,7 @@ article {
     padding-bottom: 60px;
   }
 
-  h2 {
+  h1 {
     text-align: center;
     margin-bottom: 50px;
 

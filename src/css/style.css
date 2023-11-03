@@ -415,15 +415,15 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 60px;
-  font-size: 3.75rem;
+  font-size: 48px;
+  font-size: 3rem;
   margin-top: 0;
   line-height: 1.15;
 }
 
 h2, .h2, .ui-h2 {
-  font-size: 48px;
-  font-size: 3rem;
+  font-size: 38px;
+  font-size: 2.375rem;
   line-height: 1.2;
 }
 @media (max-width: 960px) {
@@ -2903,16 +2903,17 @@ img {
   vertical-align: middle;
   width: 22px;
   height: 22px;
-  fill: none;
-  cursor: pointer;
-  margin-left: 4px;
+  background-image: url(../images/caret-down_black.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   -webkit-transition: 0.3s -webkit-transform;
   transition: 0.3s -webkit-transform;
   -o-transition: 0.3s transform;
   transition: 0.3s transform;
   transition: 0.3s transform, 0.3s -webkit-transform;
-  stroke: #2A2D33;
-  stroke-width: 1.5px;
+  cursor: pointer;
+  margin-left: 4px;
 }
 .header-logo {
   display: block;
@@ -2932,7 +2933,7 @@ img {
   color: #2A2D33;
 }
 .header__main li .icon {
-  stroke: #fff;
+  background-image: url(../images/caret-down_white.svg);
 }
 
 .main {
@@ -5856,12 +5857,12 @@ article {
     padding-bottom: 60px;
   }
 }
-article h2 {
+article h1 {
   text-align: center;
   margin-bottom: 50px;
 }
 @media (max-width: 599px) {
-  article h2 {
+  article h1 {
     margin-bottom: 20px;
   }
 }
