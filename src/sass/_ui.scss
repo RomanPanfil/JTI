@@ -29,11 +29,7 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1 {
 	@include fz($h1);
 	margin-top: 0;
-	line-height: 1.15;	
-}
-h2, .h2, .ui-h2 {
-	@include fz($h2);
-	line-height: 1.2;
+	line-height: 1.15;
 
 	@media (max-width: 960px) {
 		@include fz(42);
@@ -46,6 +42,10 @@ h2, .h2, .ui-h2 {
 	@media (max-width: 480px) {
 		@include fz(28);
 	}
+}
+h2, .h2, .ui-h2 {
+	@include fz($h2);
+	line-height: 1.2;	
 }
 h3, .h3, .ui-h3 {
 	@include fz($h3);
@@ -194,6 +194,10 @@ img {
 
 	&__white {
 		color: $font_white;
+	}
+
+	@media(max-width: 1140px) {		
+		@include fz(42);
 	}
 
 	@media(max-width: 960px) {		

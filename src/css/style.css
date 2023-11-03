@@ -420,29 +420,29 @@ h1, .h1 {
   margin-top: 0;
   line-height: 1.15;
 }
-
-h2, .h2, .ui-h2 {
-  font-size: 38px;
-  font-size: 2.375rem;
-  line-height: 1.2;
-}
 @media (max-width: 960px) {
-  h2, .h2, .ui-h2 {
+  h1, .h1 {
     font-size: 42px;
     font-size: 2.625rem;
   }
 }
 @media (max-width: 599px) {
-  h2, .h2, .ui-h2 {
+  h1, .h1 {
     font-size: 32px;
     font-size: 2rem;
   }
 }
 @media (max-width: 480px) {
-  h2, .h2, .ui-h2 {
+  h1, .h1 {
     font-size: 28px;
     font-size: 1.75rem;
   }
+}
+
+h2, .h2, .ui-h2 {
+  font-size: 38px;
+  font-size: 2.375rem;
+  line-height: 1.2;
 }
 
 h3, .h3, .ui-h3 {
@@ -632,6 +632,12 @@ img {
 }
 .block-title__white {
   color: #fff;
+}
+@media (max-width: 1140px) {
+  .block-title {
+    font-size: 42px;
+    font-size: 2.625rem;
+  }
 }
 @media (max-width: 960px) {
   .block-title {
@@ -3150,6 +3156,11 @@ img {
   aspect-ratio: 2;
   padding-top: 26%;
 }
+@media (max-width: 1280px) {
+  .main-slide {
+    padding-top: 20%;
+  }
+}
 @media (max-width: 960px) {
   .main-slide {
     padding-top: 50%;
@@ -4597,15 +4608,50 @@ img {
   left: 0%;
   width: 16.6%;
 }
+@media (max-width: 1366px) {
+  .news-section-shadow-1 {
+    top: 14.5%;
+  }
+}
+@media (max-width: 1140px) {
+  .news-section-shadow-1 {
+    top: 16.5%;
+  }
+}
 .news-section-shadow-2 {
   top: 57%;
   left: 0%;
   width: 16.6%;
 }
+@media (max-width: 1366px) {
+  .news-section-shadow-2 {
+    top: 55.5%;
+  }
+}
+@media (max-width: 1140px) {
+  .news-section-shadow-2 {
+    top: 57.5%;
+  }
+}
+@media (max-width: 1024px) {
+  .news-section-shadow-2 {
+    top: 57%;
+  }
+}
 .news-section-shadow-3 {
   top: 30.5%;
   left: 50%;
   width: 16.6%;
+}
+@media (max-width: 1366px) {
+  .news-section-shadow-3 {
+    top: 28%;
+  }
+}
+@media (max-width: 1140px) {
+  .news-section-shadow-3 {
+    top: 29.5%;
+  }
 }
 .news__main {
   margin-bottom: 0px;
@@ -4659,6 +4705,16 @@ img {
 }
 .news-item:nth-child(odd) .news-card {
   margin-bottom: 215px;
+}
+@media (max-width: 1280px) {
+  .news-item:nth-child(odd) .news-card {
+    margin-bottom: 200px;
+  }
+}
+@media (max-width: 1024px) {
+  .news-item:nth-child(odd) .news-card {
+    margin-bottom: 160px;
+  }
 }
 @media (max-width: 960px) {
   .news-item:nth-child(odd) .news-card {
