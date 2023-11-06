@@ -3240,13 +3240,25 @@ article {
       }
 
       .icon {
+        // display: inline-block;
+        // vertical-align: middle;
+        // width: 22px;
+        // height: 22px;
+        // fill: none;
+        // transition: transform 0.3s;
+        // stroke: $primary;
+
         display: inline-block;
         vertical-align: middle;
         width: 22px;
         height: 22px;
-        fill: none;
-        transition: transform 0.3s;
-        stroke: $primary;
+        background-image: url(../images/caret-down_black.svg);       
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.3s transform;
+        cursor: pointer;
+        margin-left: 4px;
       }
     }
   }

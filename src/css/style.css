@@ -6317,13 +6317,17 @@ article a:hover {
   vertical-align: middle;
   width: 22px;
   height: 22px;
-  fill: none;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  -o-transition: transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-  stroke: #2A2D33;
+  background-image: url(../images/caret-down_black.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: 0.3s -webkit-transform;
+  transition: 0.3s -webkit-transform;
+  -o-transition: 0.3s transform;
+  transition: 0.3s transform;
+  transition: 0.3s transform, 0.3s -webkit-transform;
+  cursor: pointer;
+  margin-left: 4px;
 }
 
 .popup-notifications {
