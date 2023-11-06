@@ -1625,6 +1625,25 @@
 
 // news
 .news {
+
+  @media(max-width: 1366px) {
+    margin-bottom: 80px;
+  }
+
+  @media(max-width: 1280px) {
+    margin-bottom: 40px;
+  }
+
+  @media(max-width: 960px) {
+    margin-left: -30px;
+    margin-right: -30px;   
+  }
+
+  @media(max-width: 420px) {
+    margin-left: -20px;
+    margin-right: -20px;   
+  }
+
   &-section {
     padding-top: 200px;
     padding-bottom: 200px;
@@ -1760,31 +1779,39 @@
       }
     }
   }
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
 
   &__main {
     margin-bottom: 0px;
+
+    @media(max-width: 960px) {  
+    margin-bottom: 120px;
   }
 
-  @media(max-width: 1366px) {
-    margin-bottom: 80px;
-  }
-
-  @media(max-width: 1280px) {
-    margin-bottom: 40px;
-  }
-
-  @media(max-width: 960px) {
-    margin-left: -30px;
-    margin-right: -30px;
-    margin-bottom: 80px;
-  }
-
-  @media(max-width: 420px) {
-    margin-left: -20px;
-    margin-right: -20px;
+  @media(max-width: 420px) {  
     margin-bottom: 195px;
   }
+  }
+
+  // @media(max-width: 1366px) {
+  //   margin-bottom: 80px;
+  // }
+
+  // @media(max-width: 1280px) {
+  //   margin-bottom: 40px;
+  // }
+
+  // @media(max-width: 960px) {
+  //   margin-left: -30px;
+  //   margin-right: -30px;
+  //   margin-bottom: 80px;
+  // }
+
+  // @media(max-width: 420px) {
+  //   margin-left: -20px;
+  //   margin-right: -20px;
+  //   margin-bottom: 195px;
+  // }
 
   &-wrapper {
     padding-bottom: 200px;
@@ -3240,14 +3267,6 @@ article {
       }
 
       .icon {
-        // display: inline-block;
-        // vertical-align: middle;
-        // width: 22px;
-        // height: 22px;
-        // fill: none;
-        // transition: transform 0.3s;
-        // stroke: $primary;
-
         display: inline-block;
         vertical-align: middle;
         width: 22px;
