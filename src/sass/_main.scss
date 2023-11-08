@@ -864,15 +864,25 @@
       position: relative;
       padding-left: 36px;
 
-      &::before {
-        content: '';
-        background-image: url(../images/svg/info-circle.svg);
-        background-repeat: no-repeat;
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        left: 0;
-        top: 0;
+      &.ux-tooltip {
+        &::before {
+          content: '';
+          background-image: url(../images/svg/info-circle.svg);
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0.6;        
+        } 
+      }
+
+      &:hover {
+        &::before {
+          cursor: pointer;
+          opacity: 1;          
+        }
       }
 
       .icon {
@@ -1625,6 +1635,8 @@
 
 // news
 .news {
+
+  margin-bottom: 100px;
 
   @media(max-width: 1366px) {
     margin-bottom: 80px;

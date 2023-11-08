@@ -3712,7 +3712,7 @@ img {
   position: relative;
   padding-left: 36px;
 }
-.product-description-condition::before {
+.product-description-condition.ux-tooltip::before {
   content: "";
   background-image: url(../images/svg/info-circle.svg);
   background-repeat: no-repeat;
@@ -3721,6 +3721,11 @@ img {
   position: absolute;
   left: 0;
   top: 0;
+  opacity: 0.6;
+}
+.product-description-condition:hover::before {
+  cursor: pointer;
+  opacity: 1;
 }
 .product-description-condition .icon {
   width: 24px;
@@ -4519,6 +4524,9 @@ img {
   }
 }
 
+.news {
+  margin-bottom: 100px;
+}
 @media (max-width: 1366px) {
   .news {
     margin-bottom: 80px;
