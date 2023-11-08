@@ -2355,19 +2355,21 @@
     }
 
     &-positions {
-      // padding: 40px 40px 36px 40px;
-      border-radius: 20px;
-      // border: 1px solid rgba(42, 45, 51, 0.10);     
-      box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);
-      // margin-bottom: 60px;
-      max-height: 0;
+      border-radius: 20px;    
+      box-shadow: 6px 4px 25px 0px rgba(0, 0, 0, 0.07);   
+      // max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s;
+      transition: opacity 0.3s, height 0.3s;
+      height: 0;
+      opacity: 0;
       
       &.open {
         padding: 40px 40px 36px 40px;
         margin-bottom: 60px;   
-        border: 1px solid rgba(42, 45, 51, 0.10);       
+        border: 1px solid rgba(42, 45, 51, 0.10);
+        // max-height: max-content;   
+        height: max-content;
+        opacity: 1;
       }
     }
 

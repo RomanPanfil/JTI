@@ -177,17 +177,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!document.querySelector('.characteristic-filter-title') || !document.querySelector('.characteristic-filter-positions')) return
     
     const title = document.querySelector('.characteristic-filter-title');
-    const content = document.querySelector('.characteristic-filter-positions');
+    const content = document.querySelector('.characteristic-filter-positions');    
     
     title.addEventListener('click', () => {
       if (content.classList.contains('open')) {
         content.classList.remove('open');
-        content.style.maxHeight = null;
+        // content.style.maxHeight = null;
         title.classList.remove('open')
       } else {
         content.classList.add('open');
         title.classList.add('open')
-        content.style.maxHeight = content.scrollHeight + 'px';
+        // content.style.maxHeight = content.scrollHeight + 'px';
       }
     });
   })();
