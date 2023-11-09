@@ -3234,7 +3234,6 @@ img {
 }
 @media (max-width: 599px) {
   .brand-card-image__big img {
-    max-width: 200px;
     height: auto;
     max-height: 70px;
   }
