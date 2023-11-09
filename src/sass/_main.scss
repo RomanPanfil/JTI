@@ -392,6 +392,11 @@
     height: calc(100% - 20px);
     min-height: 216px;
 
+    @media(max-width: 599px) {
+      margin-bottom: 10px;
+      height: calc(100% - 10px);
+    }
+
     &__big {
       display: flex;
       align-items: center;
@@ -418,12 +423,17 @@
         margin-bottom: 0;
         height: 128px;
 
+        @media(max-width: 599px) {
+          height: 70px;
+        }
+
         img {
           max-height: 128px;
-          height: 128px;
+          height: 128px;          
 
           @media(max-width: 599px) {
             max-width: 200px;
+            height: auto;
           }
         }
       }

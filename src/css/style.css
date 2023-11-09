@@ -3186,6 +3186,12 @@ img {
   height: calc(100% - 20px);
   min-height: 216px;
 }
+@media (max-width: 599px) {
+  .brand-card {
+    margin-bottom: 10px;
+    height: calc(100% - 10px);
+  }
+}
 .brand-card__big {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3217,6 +3223,11 @@ img {
   margin-bottom: 0;
   height: 128px;
 }
+@media (max-width: 599px) {
+  .brand-card-image__big {
+    height: 70px;
+  }
+}
 .brand-card-image__big img {
   max-height: 128px;
   height: 128px;
@@ -3224,6 +3235,7 @@ img {
 @media (max-width: 599px) {
   .brand-card-image__big img {
     max-width: 200px;
+    height: auto;
   }
 }
 .brand-card-description {
