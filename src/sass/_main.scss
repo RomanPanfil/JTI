@@ -2400,6 +2400,9 @@
         // max-height: max-content;   
         height: max-content;
         opacity: 1;
+        @media (max-width: 960px) {
+          overflow-y: auto;
+        }        
       }
     }
 
