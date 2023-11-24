@@ -3541,6 +3541,7 @@ article {
   }
 
   &-text {
+    @include fz(16);
     display: flex;
     flex-direction: column;   
     visibility: hidden;
